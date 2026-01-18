@@ -4,6 +4,8 @@ const dotenv = require("dotenv")
 const db = require("./config/database")
 const authRoutes = require("./routes/auth.routes")
 const observationRoutes = require("./routes/observation.routes")
+const conseilRoutes = require("./routes/conseil.routes")
+const alerteRoutes = require("./routes/alerte.routes")
 
 dotenv.config()
 
@@ -14,6 +16,8 @@ app.use(express.json())
 
 app.use("/api/auth", authRoutes)
 app.use("/api/observation", observationRoutes)
+app.use("/api/conseils", conseilRoutes)
+app.use("/api/alertes", alerteRoutes)
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
